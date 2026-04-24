@@ -15,8 +15,9 @@ function App() {
             <Route path="/favorites" element={<Favorites />} />
           </Routes>
         </main>
+        <Hello/>
       </div>
-
+      
     </>
   );
 }

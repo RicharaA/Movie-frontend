@@ -21,7 +21,7 @@ function Home() {
   const handleSearch = (e) => {
     e.preventDefault();
     alert(searchQuery);
-
+    
   };
 
   return (

@@ -1,47 +1,74 @@
+/* Navbar.css */
+
 .navbar {
-  background-color: #000000;
-  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  padding: 14px 28px;
+  background: #111827; /* deep clean dark */
+  color: #ffffff;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.navbar-brand {
-  font-size: 1.5rem;
-  font-weight: bold;
+/* Brand */
+.navbar-brand a {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-decoration: none;
+
+  letter-spacing: 0.5px;
+  transition: 0.25s ease;
 }
 
+.navbar-brand a:hover {
+  color: #60a5fa; /* soft vivid blue */
+}
+
+/* Links container */
 .navbar-links {
   display: flex;
-  gap: 2rem;
+  gap: 20px;
 }
 
+/* Links */
 .nav-link {
+  color: #e5e7eb;
+  text-decoration: none;
   font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background-color 0.2s;
+  font-weight: 500;
+
+  position: relative;
+  transition: 0.25s ease;
 }
 
+/* Hover color */
 .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  color: #60a5fa;
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    padding: 1rem;
-  }
+/* Underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #60a5fa;
+  transition: 0.3s ease;
+}
 
-  .navbar-brand {
-    font-size: 1.2rem;
-  }
+.nav-link:hover::after {
+  width: 100%;
+}
 
-  .navbar-links {
-    gap: 1rem;
-  }
-
-  .nav-link {
-    padding: 0.5rem;
-  }
+/* Active feel (optional if you add NavLink later) */
+.nav-link.active {
+  color: #3b82f6;
 }

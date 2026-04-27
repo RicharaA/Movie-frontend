@@ -1,47 +1,103 @@
+/* Footer.css */
+
 .footer {
-  background-color: #111;
-  color: white;
-  padding: 40px 20px 20px;
-  margin-top: 50px;
+  background: #0f172a; /* deep cinematic dark */
+  color: #e5e7eb;
+  margin-top: 60px;
+  padding-top: 40px;
 }
 
+/* Main layout */
 .footer-container {
   display: flex;
   justify-content: space-between;
+  gap: 40px;
+  padding: 0 40px 30px 40px;
   flex-wrap: wrap;
 }
 
-.footer-brand,
-.footer-links,
-.footer-social {
-  margin: 10px;
+/* Brand section */
+.footer-brand h2 {
+  color: #ffffff;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
 }
 
-
-
-.footer-links ul .footer-link  {
-  margin: 8px 0;
+.footer-brand p {
+  color: #9ca3af;
+  max-width: 250px;
+  line-height: 1.5;
 }
 
-.footer-links  {
-  color: white;
+/* Section titles */
+.footer-links h3,
+.footer-social h3 {
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+/* Links list */
+.footer-links ul {
   list-style: none;
   padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+/* Links */
+.footer-link {
   text-decoration: none;
-}
-.footer-links ul li{
-    list-style: none;
+  color: #cbd5e1;
+  transition: 0.25s ease;
+  font-size: 0.95rem;
+  position: relative;
 }
 
+/* Hover effect */
 .footer-link:hover {
-  color: red;
+  color: #60a5fa;
 }
 
+/* Subtle underline animation */
+.footer-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 1.5px;
+  background: #60a5fa;
+  transition: 0.3s ease;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+/* Social section text */
+.footer-social p {
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* Bottom bar */
 .footer-bottom {
   text-align: center;
+  padding: 15px;
+  border-top: 1px solid #1f2937;
+  color: #94a3b8;
+  font-size: 0.9rem;
   margin-top: 20px;
-  border-top: 1px solid gray;
-  padding-top: 10px;
 }
 
-
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 25px;
+    padding: 0 20px 20px 20px;
+  }
+}

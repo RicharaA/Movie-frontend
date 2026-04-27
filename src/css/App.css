@@ -1,4 +1,5 @@
 .main-content {
+  background-color: rgb(54, 83, 121);
   flex: 1;
   padding: 2rem;
   box-sizing: border-box;

@@ -1,23 +1,10 @@
 import MovieCard from "../components/MovieCard";
-import { useState, useEffect } from "react";
-import { loadMovies } from "../services/api";
+import Movies from "../components/Movies";
+import { useState } from "react";
 import "../css/Home.css";
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [mvies, setMovies] = useState([]);
-
-  useEffect(() => {
-    const lfilm = async () => {
-      try {
-        const pFilm = await loadMovies();
-        setMovies(pFilm);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    lfilm();
-  }, []);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -38,15 +25,7 @@ function Home() {
           Search
         </button>
       </form>
-      <div className="movies-grid">
-        {mvies
-          .filter((movie) =>
-            movie.title.toLowerCase().startsWith(searchQuery.toLowerCase())
-          )
-          .map((movie) => (
-            <MovieCard movie={movie} key={movie.id} />
-          ))}
-      </div>
+      <Movies />
     </div>
   );
 }

@@ -1,4 +1,3 @@
-// import movies from "../data/movies.json"
 import MovieCard from "../components/MovieCard";
 import { useState, useEffect } from "react";
 import { loadMovies } from "../services/api";
